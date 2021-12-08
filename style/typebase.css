@@ -14,16 +14,13 @@ body {
   /* background-size: 20em; */
   background-repeat: repeat;
   margin: 0 5%;
+  display: grid;
+  grid-template-columns: auto auto;
 }
-.colLeft { 
-  width: 45%; 
-  float: left; 
-  margin-right: 5%; 
+.col { 
+ padding: 0 5em 5em 0;
 }
-.colRight { 
-  width: 45%; 
-  float: left; 
-}
+
 p {
   line-height: 1.5rem;
   margin-top: 1.5rem;
@@ -134,7 +131,6 @@ code {
   line-height: 2em;
 }
 .item {
-  width: 30%;
   display: inline-block;
   margin-top: 2rem;
   filter: grayscale(100%);
