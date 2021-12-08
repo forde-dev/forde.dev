@@ -1,0 +1,212 @@
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+html {
+  /* Change default typefaces here */
+  font-family: serif;
+  font-size: 137.5%;
+  -webkit-font-smoothing: antialiased;
+}
+/* Copy & Lists */
+
+body {
+  /* width: 50%; */
+  background-image: url(../assets/lined-paper.png);
+  /* background-size: 20em; */
+  background-repeat: repeat;
+  margin: 0 5%;
+}
+.colLeft { 
+  width: 45%; 
+  float: left; 
+  margin-right: 5%; 
+}
+.colRight { 
+  width: 45%; 
+  float: left; 
+}
+p {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+small {
+  font-style: italic;
+  font-weight: 10;
+}
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+ul li,
+ol li {
+  line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Change heading typefaces here */
+  font-family: sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+h1 {
+  font-size: 4.242rem;
+  line-height: 4.5rem;
+  margin-top: 3rem;
+}
+h2 {
+  font-size: 2.828rem;
+  line-height: 3rem;
+  margin-top: 3rem;
+}
+h3 {
+  font-size: 1.414rem;
+}
+h4 {
+  font-size: 0.707rem;
+}
+h5 {
+  font-size: 0.4713333333333333rem;
+}
+h6 {
+  font-size: 0.3535rem;
+}
+/* Tables */
+table {
+  margin-top: 1.5rem;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0;
+  line-height: 33px;
+}
+/* Code blocks */
+code {
+  vertical-align: bottom;
+}
+/* Leading paragraph text */
+.lead {
+  font-size: 1.414rem;
+}
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+.polaroid {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  
+}
+.polaroid > img{
+  max-width: 100%;
+  height: auto;
+}
+.caption {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 2em;
+}
+.item {
+  width: 30%;
+  display: inline-block;
+  margin-top: 2rem;
+  filter: grayscale(100%);
+}
+.item .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) {
+  transform: scale(0.8, 0.8) rotate(5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) .polaroid:before {
+  transform: rotate(6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+2) {
+  transform: scale(0.8, 0.8) rotate(-5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+2) .polaroid:before {
+  transform: rotate(-6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+4) {
+  transform: scale(0.8, 0.8) rotate(3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+4) .polaroid:before {
+  transform: rotate(4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:nth-of-type(4n+3) {
+  transform: scale(0.8, 0.8) rotate(-3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+3) .polaroid:before {
+  transform: rotate(-4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:hover {
+  filter: none;
+  transform: scale(1, 1) rotate(0deg) !important;
+  transition: all 0.35s;
+}
+.item:hover .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transform: rotate(0deg);
+  height: 90%;
+  width: 90%;
+  bottom: 0%;
+  right: 5%;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+  transition: all 0.35s;
+}
