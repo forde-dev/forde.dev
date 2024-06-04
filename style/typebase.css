@@ -1,5 +1,6 @@
 /*! Typebase.less v0.1.0 | MIT License */
 /* Setup */
+
 html {
   /* Change default typefaces here */
   font-family: serif;
@@ -14,11 +15,7 @@ body {
   /* background-size: 20em; */
   background-repeat: repeat;
   margin: 0 5%;
-  display: grid;
   grid-template-columns: auto auto;
-}
-.col { 
- padding: 0 5em 5em 0;
 }
 
 p {
@@ -205,4 +202,25 @@ code {
   right: 5%;
   box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
   transition: all 0.35s;
+}
+
+.top {
+  float: left;
+  width: 100%;
+}
+
+.main {
+  float: left;
+  width: 50%;
+}
+
+.photo {
+  float: right;
+  width: 50%;
+}
+
+@media screen and (max-width: 65em) {
+  .top, .photo, .main {
+    width: 100%;
+  }
 }
