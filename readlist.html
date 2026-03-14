@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Readlist // forde.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style/typebase.css" />
+  </head>
+
+  <body>
+
+    <!-- NAV -->
+    <nav class="site-nav" aria-label="Site navigation">
+      <span class="nav-prompt">forde.dev:~$</span>
+      <a href="/">./index</a>
+      <a href="/readlist.html" class="active">./readlist</a>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="top readlist-header">
+      <p class="prompt">root@forde.dev:~/readlist$</p>
+      <h1>READLIST</h1>
+      <p class="lead">// things worth reading</p>
+      <p class="intro-text">
+        A living index of links I've found useful, interesting, or just want to remember.
+        Skewed heavily towards systems programming, hardware documentation, and whatever's
+        been making the rounds on Hacker News.
+      </p>
+      <!--
+        Future: this list is fetched live from readlist.forde.dev/links on page load.
+        If the API is unreachable the page falls back to the static list below.
+        Status is reported in the indicator at the bottom of this header.
+      -->
+      <p id="readlist-status" class="readlist-status" aria-live="polite"></p>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main" id="readlist-main">
+
+      <!-- =====================================================================
+           STATIC FALLBACK LIST
+           This is the canonical content. The JS below will replace it at runtime
+           if readlist.forde.dev/links responds successfully.
+           To add links here: copy a <li class="link-item"> block and fill it in.
+           ===================================================================== -->
+
+      <article class="link-category">
+        <h2>// ARCHITECTURE &amp; HARDWARE</h2>
+        <ul class="link-list" id="cat-arch">
+
+          <li class="link-item">
+            <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html"
+               target="_blank" rel="noopener noreferrer">
+              Intel® 64 and IA-32 Architectures Software Developer Manuals
+            </a>
+            <p class="link-note">The full x86/x86-64 ISA reference. Volumes 1–4. Essential if you're
+            doing anything at the instruction level, writing a JIT, or just want to understand
+            what the CPU is actually doing.</p>
+            <div class="link-tags">
+              <span class="tag">x86</span>
+              <span class="tag">ISA</span>
+              <span class="tag">Intel</span>
+            </div>
+          </li>
+
+          <li class="link-item">
+            <a href="https://www.amd.com/en/search/documentation/hub.html#q=AMD64%20Architecture%20Programmer%27s%20Manual&sortCriteria=%40amd_release_date%20descending&f-amd_document_type=Programmer%20References"
+               target="_blank" rel="noopener noreferrer">
+              AMD64 Architecture Programmer's Manual
+            </a>
+            <p class="link-note">AMD's counterpart to the Intel SDM. Good to read both when you care
+            about cross-vendor compatibility, particularly around NUMA topology and MSRs.</p>
+            <div class="link-tags">
+              <span class="tag">x86-64</span>
+              <span class="tag">AMD</span>
+              <span class="tag">ISA</span>
+            </div>
+          </li>
+
+          <li class="link-item">
+            <a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/numa_memory_policy.html"
+               target="_blank" rel="noopener noreferrer">
+              Linux NUMA Memory Policy — kernel.org
+            </a>
+            <p class="link-note">kernel.org documentation on NUMA memory policies. Useful companion when
+            you're optimising for locality and need to understand how the kernel exposes the topology.</p>
+            <div class="link-tags">
+              <span class="tag">NUMA</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Memory</span>
+            </div>
+          </li>
+
+
+        </ul>
+      </article>
+
+      <article class="link-category">
+        <h2>// LINUX &amp; KERNEL</h2>
+        <ul class="link-list" id="cat-kernel">
+
+          <li class="link-item">
+            <a href="https://www.kernel.org/doc/html/latest/driver-api/index.html"
+               target="_blank" rel="noopener noreferrer">
+              Linux Driver Implementer's API Guide
+            </a>
+            <p class="link-note">The most useful single-entry documentation point for kernel driver
+            development. Covers device model, DMA, IRQs, bus interfaces, and more.</p>
+            <div class="link-tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Kernel</span>
+              <span class="tag">Drivers</span>
+            </div>
+          </li>
+
+          <li class="link-item">
+            <a href="https://lwn.net/"
+               target="_blank" rel="noopener noreferrer">
+              LWN.net
+            </a>
+            <p class="link-note">The best ongoing coverage of Linux kernel development, systems
+            programming, and open source projects. The weekly kernel development summaries alone
+            are worth bookmarking.</p>
+            <div class="link-tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Kernel</span>
+              <span class="tag">News</span>
+            </div>
+          </li>
+
+        </ul>
+      </article>
+
+      <article class="link-category">
+        <h2>// NETWORKING &amp; TELECOMS</h2>
+        <ul class="link-list" id="cat-net">
+
+          <li class="link-item">
+            <a href="https://www.3gpp.org/specifications-technologies/specifications-by-series"
+               target="_blank" rel="noopener noreferrer">
+              3GPP Specifications (by series)
+            </a>
+            <p class="link-note">The 5G standards starting point. Series 38 covers NR (New Radio);
+            series 23 covers architecture. Dense reading but there's no substitute when you need
+            to know what the standard actually says.</p>
+            <div class="link-tags">
+              <span class="tag">5G</span>
+              <span class="tag">3GPP</span>
+              <span class="tag">Standards</span>
+            </div>
+          </li>
+
+        </ul>
+      </article>
+
+    </div><!-- /#readlist-main -->
+
+    <script>
+      /*
+       * readlist.forde.dev integration
+       * --------------------------------
+       * On page load this script attempts to fetch the link list from
+       *   GET https://readlist.forde.dev/links
+       *
+       * Expected response shape (JSON array):
+       *
+       *   [
+       *     {
+       *       "category": "ARCHITECTURE & HARDWARE",
+       *       "id": "cat-arch",
+       *       "links": [
+       *         {
+       *           "url":   "https://...",
+       *           "title": "...",
+       *           "note":  "...",
+       *           "tags":  ["x86", "ISA"]
+       *         }
+       *       ]
+       *     }
+       *   ]
+       *
+       * If the API responds successfully the static categories above are each
+        setStatus('[ fetching readlist.forde.dev... ]', '');
+
+
+       * replaced with the live data. If the request fails (network error, non-2xx,
+       * or CORS block) the static HTML is left untouched and the status indicator
+       * reports the fallback.
+       *
+       * To activate: remove the `return;` line at the top of the IIFE below.
+       */
+      (function () {
+        const API = 'https://readlist.forde.dev/links';
+        const statusEl = document.getElementById('readlist-status');
+
+        function setStatus(msg, type) {
+          statusEl.textContent = msg;
+          statusEl.className = 'readlist-status ' + type;
+        }
+
+        function buildCategory(cat) {
+          const article = document.createElement('article');
+          article.className = 'link-category';
+
+          const h2 = document.createElement('h2');
+          h2.textContent = '// ' + cat.category;
+          article.appendChild(h2);
+
+          const ul = document.createElement('ul');
+          ul.className = 'link-list';
+          ul.id = cat.id || '';
+
+          cat.links.forEach(function (link) {
+            const li = document.createElement('li');
+            li.className = 'link-item';
+
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.textContent = link.title;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            li.appendChild(a);
+
+            if (link.note) {
+              const p = document.createElement('p');
+              p.className = 'link-note';
+              p.textContent = link.note;
+              li.appendChild(p);
+            }
+
+            if (link.tags && link.tags.length) {
+              const div = document.createElement('div');
+              div.className = 'link-tags';
+              link.tags.forEach(function (tag) {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.textContent = tag;
+                div.appendChild(span);
+              });
+              li.appendChild(div);
+            }
+
+            ul.appendChild(li);
+          });
+
+          article.appendChild(ul);
+          return article;
+        }
+
+        setStatus('[ fetching readlist.forde.dev... ]', '');
+
+        fetch(API)
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
+          .then(function (data) {
+            if (!Array.isArray(data) || data.length === 0) {
+              throw new Error('empty or malformed response');
+            }
+            const main = document.getElementById('readlist-main');
+            main.innerHTML = '';
+            data.forEach(function (cat) {
+              main.appendChild(buildCategory(cat));
+            });
+            setStatus('[ source: readlist.forde.dev — live ]', 'live');
+          })
+          .catch(function (err) {
+            console.warn('[readlist] API unavailable, using static list:', err.message);
+            setStatus('[ source: static — api unreachable ]', 'fail');
+          });
+      }());
+    </script>
+
+  </body>
+</html>

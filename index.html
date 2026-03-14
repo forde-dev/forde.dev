@@ -1,170 +1,253 @@
 <!doctype html>
-<html>
+<html lang="en">
 
   <head>
-    <title>Michael Forde - forde.dev</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Forde // forde.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style/typebase.css" />
   </head>
 
   <body>
 
+    <!-- NAV -->
+    <nav class="site-nav" aria-label="Site navigation">
+      <span class="nav-prompt">forde.dev:~$</span>
+      <a href="/" class="active">./index</a>
+      <a href="/readlist.html">./readlist</a>
+    </nav>
 
+    <!-- HEADER -->
+    <div class="top">
+      <div class="top-grid">
+        <div class="top-copy">
+          <p class="prompt">root@forde.dev:~$</p>
+          <h1 class="cursor">MICHAEL FORDE</h1>
+          <p class="lead">// Software Engineer</p>
+          <p class="intro-text">
+            Hey. I'm Michael Forde — a software engineer, entrepreneur, and general-purpose nerd.
+            Currently working on 5G satellite communications. Previous life: kernel driver developer,
+            startup founder, and university society events coordinator.
+            Between machines I wrench on old Japanese cars, maintain my homelab and collect ThinkPads.
+          </p>
+          <p class="readlist-cta">
+            I keep a <a href="/readlist.html">readlist</a> — a curated index of links worth reading,
+            from x86 ISA docs to things I've found on Hacker News.
+          </p>
+        </div>
 
-  <div class="top">
-
-    <h1><code>Michael Forde</code></h1>
-      <p class="lead">
-          <code>Software Engineer - Intel</code>      
-      </p>
-
-      <p>
-        <b><code> 
-          Hey! &#x1F44B; My name is Michael Forde, I am currently a Software Engineer working at Intel on QuickAssist Technology. 
-          I'm also an entrepreneur and in general a big nerd.
-        </code></b>
-        </p>
-  </div>
-
-  <div class="photo">
-    <div class="item">
-      <div class="polaroid"><img src="./assets/forde-2.jpg">
-        <div class="caption"><code>Forde</code></div>
+        <figure class="profile-card">
+          <img src="./assets/forde-2.jpg" alt="Portrait of Michael Forde" class="profile-image" />
+          <figcaption class="profile-meta">
+            <span>asset://forde-2.jpg</span>
+            <span>status://online</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
-  </div>
-  
-  <div class="main">
 
-    <article>
-      <h2><code>Experience</code></h2>
+    <!-- MAIN -->
+    <div class="main">
 
-      <p>
-        <code>
-          Gradutated from University College Cork with a degree in Computer Science. I have started out my career in Intel, however here are
-          some of the other stuff I have been up to over the last few years while studying Computer Science.
-        </code>
-      </p>
-      
-      <section>
-        <h3>
-          <code>Intel <small>- Software Engineer</small></code>
-        </h3>
+      <!-- EXPERIENCE -->
+      <article>
+        <h2>// EXPERIENCE</h2>
 
-        <p>
-          <code>
-            Driver Developer working on Intel QuickAssist Technology (QAT), 
-            an integrated workload accelerator for compression and encryption.
-          </code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <code>Quartx <small>- Managing Director & Co Founder</small></code>
-        </h3>
+        <section>
+          <h3>ST Engineering Idirect <small>— Software Engineer</small></h3>
+          <p class="section-meta">[ CURRENT ]</p>
+          <p>
+            Working on innovative 5G solutions for satellite communications infrastructure.
+          </p>
+        </section>
 
-        <p>
-        <code>
-          Quartx is a data analytics start-up delivering affordable data analytics tools 
-          to local businesses, Quartx was founded by me and my uncle to grow call monitoring. 
-          Quartx is currently supporting many small to medium sized enterprises and providing 
-          these businesses with full observation over all incoming and outgoing calls in their business.
-          Gained invaluable experience in entrepreneurship, building a company and selling a product.
-        </code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <code>Netsoc <small>- Events Officer/SysAdmin</small></code>
-        </h3>
+        <section>
+          <h3>Intel <small>— Software Engineer</small></h3>
+          <p>
+            Developed and maintained Windows drivers for Intel QuickAssist Technology (QAT) —
+            a hardware-integrated workload accelerator providing high-throughput compression and
+            asymmetric/symmetric encryption offload directly in silicon.
+          </p>
+          <p>
+            Drove performance improvements by optimising the driver for NUMA-aware systems,
+            improving locality between CPU, memory, and accelerator resources to reduce overhead
+            and increase throughput under real workloads. I was also the subject matter expert for
+            telemetry, owning the instrumentation and performance visibility needed to diagnose
+            bottlenecks, validate changes, and give other teams better insight into QAT behaviour.
+          </p>
+          <p>
+            <span class="tag">C</span>
+            <span class="tag">Windows Kernel</span>
+            <span class="tag">PCIe</span>
+            <span class="tag">NUMA</span>
+            <span class="tag">Telemetry</span>
+            <span class="tag">Cryptography</span>
+            <span class="tag">Compression</span>
+          </p>
+        </section>
 
-        <p>
-        <code>
-          During my time in college I participated alot in a society called Netsoc. 
-          Here I originally joined as a sysadmin maintaining and managing multiple servers. During this time
-          I gave numerous tech talks in topics ranging from "how to build a website" to "History of Telephone Hacking".
-          In my final year in Netsoc, I got elected as the Events Officer and oversaw the organisation of over 50 events
-          ran by the society.
-        </code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <code>CloudCIX <small>- Junior Software Developer</small></code>
-        </h3>
+        <section>
+          <h3>Quartx <small>— Managing Director &amp; Co-Founder</small></h3>
+          <p>
+            Co-founded Quartx with my uncle — a B2B data analytics SaaS aimed at small and
+            medium-sized enterprises. The company grew directly from the Call Monitoring project
+            (see Projects) and expanded into a broader tool for business intelligence.
+          </p>
+          <p>
+            Wore every hat: built the product, sold it to customers, handled onboarding and support,
+            managed finances, and iterated on direction based on real customer feedback.
+            Quartx went on to serve many SMEs, giving them full visibility into call traffic patterns,
+            peak hours, missed call rates, and staff performance data.
+          </p>
+          <p>
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">SaaS</span>
+            <span class="tag">Entrepreneurship</span>
+          </p>
+        </section>
 
-        <p>
-        <code>
-          Helped designed and develop an S3 compatible object store using the Django framework.
-          Helped develop an in house Cloud Orchestration Software in Django which was 
-          used as a by customers to spin up virtual machines.
-        </code>
-        </p>
-      </section>
-    </article>
+        <section>
+          <h3>Netsoc UCC <small>— Events Officer / SysAdmin</small></h3>
+          <p>
+            UCC's networking and technology society. Joined as a sysadmin — responsible for
+            maintaining a fleet of society-owned servers, managing user accounts, and keeping
+            services running for the membership base.
+          </p>
+          <p>
+            Gave numerous tech talks ranging from beginner-friendly "How to Build a Website"
+            sessions to more niche deep-dives like "The History of Telephone Hacking."
+            In final year, elected as Events Officer — planned and executed over 50 events across
+            the academic year, including workshops, hackathons, and speaker nights.
+          </p>
+          <p>
+            <span class="tag">Linux</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Sysadmin</span>
+            <span class="tag">Public Speaking</span>
+          </p>
+        </section>
 
-    
-    <article>
-      <h2><code>Projects</code></h2>
+        <section>
+          <h3>CloudCIX <small>— Junior Software Developer</small></h3>
+          <p>
+            Worked on two main products: an S3-compatible object store built with Django, designed
+            to offer cost-effective cloud storage with broad AWS S3 ecosystem compatibility.
+            Also contributed to an in-house cloud orchestration platform — a Django-based system
+            used by customers to provision and manage virtual machines on CloudCIX infrastructure.
+          </p>
+          <p>
+            Good early exposure to cloud architecture, REST API design, and working within
+            a production codebase as part of a professional engineering team.
+          </p>
+          <p>
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
+            <span class="tag">S3</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">REST API</span>
+          </p>
+        </section>
 
-      <p>
-        <code>
-          In my spare time I like to write code and build projects as a hobby, below are some of the stuff I have created over the time.
-        </code>
-      </p>
-      
-      <section>
-        <h3>
-          <code>Call Monitoring</code>
-        </h3>
+      </article>
 
-        <p>
-          <code>
-          Call Monitoring is a standalone phone call analytics software as a service. 
-          Call Monitoring currently has 10+ actively paying customers using it daily. 
-          Call monitoring started development as a small project back in late 2019, 
-          and since then has been developed into a fully fledged software as a service product.
-          This project went on to be the foundation of my Startup Quartx.
-          </code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <code>Streamlined Throughput prediction</code>
-        </h3>
+      <!-- PROJECTS -->
+      <article>
+        <h2>// PROJECTS</h2>
 
-        <p>
-          <code>
-            This project was to investigate Continual Learning techniques for
-            throughput prediction in relation to cellular networks. The goal was to accurately
-            predict throughput using Continual learning techniques and determine
-            if continual learning can provide promising advantages for throughput 
-            prediction. This project questioned if continual learning will aid in
-            dealing with throughput prediction in dynamic environments. Given that
-            Continual learning is a state-of-the-art technique, this project examined
-            and considered approaches in the design and implementation of a continual
-            learning technique and decided on an effective approach fitting for this problem.
-            Made a continous learning pipeline which could predict with high accuracy the possible
-            thoughput in a 10 second horizon. Integrated prediction into custom app streaming high-quality video.
-            Used DASH to adaptively alter the bitrate of the video stream based on the prediction,
-            resulting in decreased buffering.
-          </code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <code>SimpleTTS</code>
-        </h3>
+        <section>
+          <h3>Call Monitoring</h3>
+          <p class="section-meta">[ SaaS / Telephony Analytics ]</p>
+          <p>
+            A standalone phone call analytics platform built as a SaaS product. Started as a side
+            project in late 2019 and grew into a fully productised service with 10+ paying customers
+            using it daily. The platform captures inbound and outbound call data, provides dashboards
+            for traffic analysis, and gives businesses actionable insight into how calls flow through
+            their organisation.
+          </p>
+          <p>
+            This project became the foundation for Quartx.
+          </p>
+        </section>
 
-        <p>
-          <code>
-            SimpleTTS is a text-to-speech software written in python. It captures
-            highlighted text on the screen and sends it to Google's text-to-speech engine, this
-            sends back an mp3 file of the speech which then gets played using PyAudio.
-            This project was built to aid myself with reading as I am dyslexic.
-          </code>
-        </p>
-      </section>
-    </article>
+        <section>
+          <h3>Streamlined Throughput Prediction</h3>
+          <p class="section-meta">[ ML / Continual Learning / Adaptive Streaming ]</p>
+          <p>
+            Final year research project investigating Continual Learning for cellular network
+            throughput prediction. Built a continuous learning pipeline capable of predicting
+            network throughput over a 10-second horizon with high accuracy — adapting to dynamic
+            network conditions over time without full retraining.
+          </p>
+          <p>
+            Integrated the prediction model into a custom adaptive video streaming app using DASH
+            to dynamically adjust bitrate based on predicted throughput, resulting in measurably
+            reduced buffering.
+          </p>
+        </section>
+
+        <section>
+          <h3>SimpleTTS</h3>
+          <p class="section-meta">[ Accessibility / Python ]</p>
+          <p>
+            A text-to-speech utility written in Python. Captures highlighted text from anywhere
+            on screen, sends it to Google's TTS engine, and plays back the resulting audio via
+            PyAudio. Built to help myself with reading — I'm dyslexic, and this made consuming
+            text-heavy content significantly easier.
+          </p>
+        </section>
+
+      </article>
+
+      <!-- INTERESTS -->
+      <article>
+        <h2>// INTERESTS</h2>
+
+        <div class="interests-grid">
+
+          <div class="interest-block">
+            <h4>// JDM CARS</h4>
+            <p>
+              Own a 1989 Eunos Roadster — lightweight, rear-wheel drive,
+              and analogue in all the right ways. Big fan of the AE86 Trueno and the
+              FD RX-7. There's a design honesty to late-80s and early-90s Japanese cars that
+              hasn't really been replicated since.
+            </p>
+          </div>
+
+          <div class="interest-block">
+            <h4>// THINKPADS</h4>
+            <p>
+              Small but growing ThinkPad collection: X60, A485, T490. The build quality and
+              keyboard feel of the classic IBM-era machines still holds up, and the later
+              AMD-powered models are legitimately great Linux laptops.
+            </p>
+          </div>
+
+          <div class="interest-block">
+            <h4>// HARDWARE &amp; HOMELAB</h4>
+            <p>
+              Home lab running TrueNAS and Linux across a mix of old and new hardware. Enjoy low-level
+              programming, kernel work, and anything that puts you close to the metal.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- CONTACT -->
+      <article>
+        <h2>// CONTACT</h2>
+        <ul class="contact-links">
+          <li><a href="https://github.com/forde-dev" target="_blank" rel="noopener noreferrer">open github.com/fordedev</a></li>
+          <li><a href="https://www.linkedin.com/in/forde-dev/" target="_blank" rel="noopener noreferrer">open linkedin.com/in/fordedev</a></li>
+        </ul>
+      </article>
+
     </div>
 
   </body>
